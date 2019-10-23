@@ -1,5 +1,4 @@
 import React from 'react';
-// import * as axios from 'axios';
 
 import styles from './Signatures.module.css';
 

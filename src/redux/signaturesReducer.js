@@ -1,6 +1,7 @@
 const CHECKED = 'CHECKED';
 const UNCHECKED = 'UNCHECKED';
 const SET_SIGNATURES = 'SET_SIGNATURES';
+const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
 
 let initialState = {
   signatures: [],
@@ -34,6 +35,11 @@ const signaturesReducer = (state = initialState, action) => {
           return s;
         }),
       };
+    case TOGGLE_IS_FETCHING:
+      return {
+        ...state,
+        isFetching: action.isFetching,
+      };
     default:
       return state;
   }
@@ -45,6 +51,10 @@ export const setUncheckedAC = signatureId => ({ type: UNCHECKED, signatureId });
 export const setSignaturesAC = signatures => ({
   type: SET_SIGNATURES,
   signatures,
+});
+export const toggleIsFetchingAC = isFetching => ({
+  type: TOGGLE_IS_FETCHING,
+  isFetching,
 });
 
 export default signaturesReducer;
