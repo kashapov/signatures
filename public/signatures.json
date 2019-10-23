@@ -1,0 +1,94 @@
+{
+  "signatures": [
+    {
+      "id": 1,
+      "img": "/assets/images/welltor.png",
+      "link": "https://welltor.com",
+      "title": "welltor",
+      "isChecked": false,
+      "isSend": false,
+      "isInstalled": false,
+      "lastEdit": "03.04.2019 16:43"
+    },
+    {
+      "id": 2,
+      "img": "/assets/images/imperium.png",
+      "link": "https://imperium.com",
+      "title": "imperium",
+      "isChecked": false,
+      "isSend": false,
+      "isInstalled": false,
+      "lastEdit": "03.04.2019 16:43"
+    },
+    {
+      "id": 3,
+      "img": "/assets/images/indestor.png",
+      "link": "https://indestor.com",
+      "title": "indestor",
+      "isChecked": false,
+      "isSend": false,
+      "isInstalled": false,
+      "lastEdit": "03.04.2019 16:43"
+    },
+    {
+      "id": 4,
+      "img": "/assets/images/lamakler.png",
+      "link": "https://lamakler.com",
+      "title": "lamakler",
+      "isChecked": false,
+      "isSend": false,
+      "isInstalled": false,
+      "lastEdit": "03.04.2019 16:43"
+    },
+    {
+      "id": 5,
+      "img": "/assets/images/rentercorp.png",
+      "link": "https://rentercorp.com",
+      "title": "rentercorp",
+      "isChecked": false,
+      "isSend": false,
+      "isInstalled": false,
+      "lastEdit": "03.04.2019 16:43"
+    },
+    {
+      "id": 6,
+      "img": "/assets/images/lamakler.png",
+      "link": "https://lamakler.com",
+      "title": "lamakler",
+      "isChecked": false,
+      "isSend": false,
+      "isInstalled": false,
+      "lastEdit": "03.04.2019 16:43"
+    },
+    {
+      "id": 7,
+      "img": "/assets/images/imperium.png",
+      "link": "https://imperium.com",
+      "title": "imperium",
+      "isChecked": false,
+      "isSend": false,
+      "isInstalled": false,
+      "lastEdit": "03.04.2019 16:43"
+    },
+    {
+      "id": 8,
+      "img": "/assets/images/indestor.png",
+      "link": "https://indestor.com",
+      "title": "indestor",
+      "isChecked": false,
+      "isSend": false,
+      "isInstalled": false,
+      "lastEdit": "03.04.2019 16:43"
+    },
+    {
+      "id": 9,
+      "img": "/assets/images/welltor.png",
+      "link": "https://welltor.com",
+      "title": "welltor",
+      "isChecked": false,
+      "isSend": false,
+      "isInstalled": false,
+      "lastEdit": "03.04.2019 16:43"
+    }
+  ]
+}
