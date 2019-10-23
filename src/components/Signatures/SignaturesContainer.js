@@ -3,10 +3,11 @@ import * as axios from 'axios';
 import { connect } from 'react-redux';
 
 import {
-  setCheckedAC,
-  setUncheckedAC,
-  setSignaturesAC,
-  toggleIsFetchingAC,
+  setChecked,
+  setUnchecked,
+  setSignatures,
+  toggleIsFetching,
+  deleteSignature,
 } from '../../redux/signaturesReducer';
 import Signatures from './Signatures';
 import Spinner from '../Spinner/Spinner';
@@ -21,7 +22,7 @@ class SignaturesContainer extends React.PureComponent {
   }
 
   render() {
-    const { signatures, setChecked, setUnchecked, isFetching } = this.props;
+    const { signatures, setChecked, setUnchecked, isFetching, deleteSignature } = this.props;
 
     return (
       <>
@@ -30,6 +31,7 @@ class SignaturesContainer extends React.PureComponent {
           signatures={signatures}
           setChecked={setChecked}
           setUnchecked={setUnchecked}
+          deleteSignature={deleteSignature}
         />
       </>
     );
@@ -43,24 +45,13 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setChecked: signatureId => {
-      dispatch(setCheckedAC(signatureId));
-    },
-    setUnchecked: signatureId => {
-      dispatch(setUncheckedAC(signatureId));
-    },
-    setSignatures: signatures => {
-      dispatch(setSignaturesAC(signatures));
-    },
-    toggleIsFetching: isFetching => {
-      dispatch(toggleIsFetchingAC(isFetching));
-    },
-  };
-};
-
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  {
+    setChecked,
+    setUnchecked,
+    setSignatures,
+    toggleIsFetching,
+    deleteSignature,
+  },
 )(SignaturesContainer);

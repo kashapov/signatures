@@ -27,6 +27,9 @@ class Signatures extends React.PureComponent {
               Check
             </button>
           )}
+          <button onClick={() => {
+                this.props.deleteSignature(id);
+              }}>delete</button>
         </div>
       </div>
     );
