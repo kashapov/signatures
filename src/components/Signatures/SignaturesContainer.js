@@ -3,8 +3,8 @@ import * as axios from 'axios';
 import { connect } from 'react-redux';
 
 import {
-  setChecked,
-  setUnchecked,
+  checkSignature,
+  uncheckSignature,
   setSignatures,
   toggleIsFetching,
   deleteSignature,
@@ -22,15 +22,15 @@ class SignaturesContainer extends React.PureComponent {
   }
 
   render() {
-    const { signatures, setChecked, setUnchecked, isFetching, deleteSignature } = this.props;
+    const { signatures, checkSignature, uncheckSignature, isFetching, deleteSignature } = this.props;
 
     return (
       <>
         {isFetching ? <Spinner /> : null}
         <Signatures
           signatures={signatures}
-          setChecked={setChecked}
-          setUnchecked={setUnchecked}
+          checkSignature={checkSignature}
+          uncheckSignature={uncheckSignature}
           deleteSignature={deleteSignature}
         />
       </>
@@ -48,8 +48,8 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps,
   {
-    setChecked,
-    setUnchecked,
+    checkSignature,
+    uncheckSignature,
     setSignatures,
     toggleIsFetching,
     deleteSignature,

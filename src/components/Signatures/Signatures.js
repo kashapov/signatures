@@ -2,8 +2,15 @@ import React from 'react';
 
 import styles from './Signatures.module.css';
 
-class Signatures extends React.PureComponent {
-  getSignatureItem = ({ id, img, isChecked }) => {
+const Signatures = props => {
+  const {
+    signatures,
+    checkSignature,
+    uncheckSignature,
+    deleteSignature,
+  } = props;
+
+  const getSignatureItem = ({ id, img, isChecked }) => {
     return (
       <div key={id} className={styles.item}>
         <div className={styles.signature}>
@@ -13,7 +20,7 @@ class Signatures extends React.PureComponent {
           {isChecked ? (
             <button
               onClick={() => {
-                this.props.setUnchecked(id);
+                uncheckSignature(id);
               }}
             >
               Uncheck
@@ -21,29 +28,29 @@ class Signatures extends React.PureComponent {
           ) : (
             <button
               onClick={() => {
-                this.props.setChecked(id);
+                checkSignature(id);
               }}
             >
               Check
             </button>
           )}
-          <button onClick={() => {
-                this.props.deleteSignature(id);
-              }}>delete</button>
+          <button
+            onClick={() => {
+              deleteSignature(id);
+            }}
+          >
+            delete
+          </button>
         </div>
       </div>
     );
   };
 
-  render() {
-    return (
-      <section className={styles.wrapper}>
-        {this.props.signatures.map(signature =>
-          this.getSignatureItem(signature),
-        )}
-      </section>
-    );
-  }
-}
+  return (
+    <section className={styles.wrapper}>
+      {signatures.map(signature => getSignatureItem(signature))}
+    </section>
+  );
+};
 
 export default Signatures;

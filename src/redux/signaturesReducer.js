@@ -1,11 +1,13 @@
-const CHECKED = 'CHECKED';
-const UNCHECKED = 'UNCHECKED';
+const CHECK_SIGNATURE = 'CHECK_SIGNATURE';
+const UNCHECK_SIGNATURE = 'UNCHECK_SIGNATURE';
 const SET_SIGNATURES = 'SET_SIGNATURES';
 const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
 const DELETE_SIGNATURE = 'DELETE_SIGNATURE';
+const DELETE_CHECKED_SIGNATURES = 'DELETE_CHECKED_SIGNATURES';
 
 let initialState = {
   signatures: [],
+  checkedSignatures: [1, 3],
   isFetching: true,
 };
 
@@ -16,7 +18,7 @@ const signaturesReducer = (state = initialState, action) => {
         ...state,
         signatures: action.signatures,
       };
-    case CHECKED:
+    case CHECK_SIGNATURE:
       return {
         ...state,
         signatures: state.signatures.map(s => {
@@ -26,7 +28,7 @@ const signaturesReducer = (state = initialState, action) => {
           return s;
         }),
       };
-    case UNCHECKED:
+    case UNCHECK_SIGNATURE:
       return {
         ...state,
         signatures: state.signatures.map(s => {
@@ -48,14 +50,28 @@ const signaturesReducer = (state = initialState, action) => {
           signature => signature.id !== action.signatureId,
         ),
       };
+    case DELETE_CHECKED_SIGNATURES:
+      return {
+        ...state,
+        signatures: state.signatures.filter(
+          signature => !state.checkedSignatures.includes(signature.id),
+        ),
+        checkedSignatures: [],
+      };
     default:
       return state;
   }
 };
 
 // Action Creators
-export const setChecked = signatureId => ({ type: CHECKED, signatureId });
-export const setUnchecked = signatureId => ({ type: UNCHECKED, signatureId });
+export const checkSignature = signatureId => ({
+  type: CHECK_SIGNATURE,
+  signatureId,
+});
+export const uncheckSignature = signatureId => ({
+  type: UNCHECK_SIGNATURE,
+  signatureId,
+});
 export const setSignatures = signatures => ({
   type: SET_SIGNATURES,
   signatures,
@@ -67,6 +83,9 @@ export const toggleIsFetching = isFetching => ({
 export const deleteSignature = signatureId => ({
   type: DELETE_SIGNATURE,
   signatureId,
+});
+export const deleteCheckedSignatures = () => ({
+  type: DELETE_CHECKED_SIGNATURES,
 });
 
 export default signaturesReducer;
