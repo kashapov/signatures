@@ -1,5 +1,6 @@
 .wrapper {
-  max-width: 1500px;
-  margin: 10px auto;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  max-width: 1500px;
+  margin: 0px auto;
+  padding: 20px;
 }
