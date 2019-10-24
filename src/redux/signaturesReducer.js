@@ -1,3 +1,5 @@
+import * as axios from 'axios';
+
 const CHECK_SIGNATURE = 'CHECK_SIGNATURE';
 const UNCHECK_SIGNATURE = 'UNCHECK_SIGNATURE';
 const SET_SIGNATURES = 'SET_SIGNATURES';
@@ -21,23 +23,11 @@ const signaturesReducer = (state = initialState, action) => {
     case CHECK_SIGNATURE:
       return {
         ...state,
-        // signatures: state.signatures.map(s => {
-        //   if (s.id === action.signatureId) {
-        //     return { ...s, isChecked: true };
-        //   }
-        //   return s;
-        // }),
         checkedSignatures: [...state.checkedSignatures, action.signatureId],
       };
     case UNCHECK_SIGNATURE:
       return {
         ...state,
-        // signatures: state.signatures.map(s => {
-        //   if (s.id === action.signatureId) {
-        //     return { ...s, isChecked: false };
-        //   }
-        //   return s;
-        // }),
         checkedSignatures: state.checkedSignatures.filter(
           id => id !== action.signatureId,
         ),
@@ -91,5 +81,16 @@ export const deleteSignature = signatureId => ({
 export const deleteCheckedSignatures = () => ({
   type: DELETE_CHECKED_SIGNATURES,
 });
+
+// Thunks
+export const getSignatures = () => {
+  return dispatch => {
+    dispatch(toggleIsFetching(true));
+    axios.get('/data/signatures.json').then(response => {
+      dispatch(toggleIsFetching(false));
+      dispatch(setSignatures(response.data.signatures));
+    });
+  };
+};
 
 export default signaturesReducer;

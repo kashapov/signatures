@@ -12,9 +12,6 @@
   max-width: 480px;
 }
 
-.signature {
-}
-
 .image {
   max-width: 100%;
   display: block;
@@ -51,9 +48,6 @@
 .infoChecked {
   justify-content: start;
   opacity: 1;
-}
-
-.infoCheckbox {
 }
 
 .infoData {

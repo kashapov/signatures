@@ -1,24 +1,18 @@
 import React from 'react';
-import * as axios from 'axios';
 import { connect } from 'react-redux';
 
 import {
   checkSignature,
   uncheckSignature,
-  setSignatures,
-  toggleIsFetching,
   deleteSignature,
+  getSignatures,
 } from '../../redux/signaturesReducer';
 import Signatures from './Signatures';
 import Spinner from '../Spinner/Spinner';
 
 class SignaturesContainer extends React.PureComponent {
   componentDidMount() {
-    this.props.toggleIsFetching(true);
-    axios.get('/data/signatures.json').then(response => {
-      this.props.toggleIsFetching(false);
-      this.props.setSignatures(response.data.signatures);
-    });
+    this.props.getSignatures();
   }
 
   render() {
@@ -59,8 +53,7 @@ export default connect(
   {
     checkSignature,
     uncheckSignature,
-    setSignatures,
-    toggleIsFetching,
     deleteSignature,
+    getSignatures,
   },
 )(SignaturesContainer);
