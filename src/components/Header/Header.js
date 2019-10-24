@@ -16,8 +16,8 @@ const Header = props => {
         </div>
       ) : (
         <div className={styles.menu}>
-          <h1>Signature List</h1>
-          <button>Create a signature</button>
+          <h1 className={styles.menuH1}>Signature List</h1>
+          <button className={styles.menuBtn}>Create a signature</button>
         </div>
       )}
     </header>

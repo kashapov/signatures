@@ -2,12 +2,14 @@
   display: grid;
   grid-gap: 30px;
   grid-template-columns: auto auto auto;
+  justify-content: center;
 }
 
 .item {
   position: relative;
-  border: 1px solid lightgray;
-  box-shadow: 1px 1px 5px -1px rgba(0, 0, 0, 0.33);
+  border-radius: 3px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.33);
+  max-width: 480px;
 }
 
 .signature {
@@ -21,13 +23,21 @@
 
 .info,
 .infoChecked {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(65, 0, 253, 0.33);
-  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(
+    rgba(59, 173, 253, 0.8) 0%,
+    rgba(2, 67, 113, 0.8) 100%
+  );
+  color: white;
+  padding: 10px;
 }
 
 .info {
@@ -39,7 +49,25 @@
 }
 
 .infoChecked {
+  justify-content: start;
   opacity: 1;
+}
+
+.infoCheckbox {
+}
+
+.infoData {
+  padding: 0 0 20px 20px;
+}
+
+.infoDataTitle {
+  display: inline-block;
+  min-width: 160px;
+}
+
+.infoMenu {
+  display: flex;
+  justify-content: space-between;
 }
 
 @media (max-width: 1000px) {
