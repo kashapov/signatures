@@ -2,7 +2,7 @@
   "signatures": [
     {
       "id": 1,
-      "img": "/data/images/welltor.png",
+      "img": "/signatures/data/images/welltor.png",
       "link": "https://welltor.com",
       "title": "welltor",
       "isSend": false,
@@ -11,7 +11,7 @@
     },
     {
       "id": 2,
-      "img": "/data/images/imperium.png",
+      "img": "/signatures/data/images/imperium.png",
       "link": "https://imperium.com",
       "title": "imperium",
       "isSend": false,
@@ -20,7 +20,7 @@
     },
     {
       "id": 3,
-      "img": "/data/images/indestor.png",
+      "img": "/signatures/data/images/indestor.png",
       "link": "https://indestor.com",
       "title": "indestor",
       "isSend": false,
@@ -29,7 +29,7 @@
     },
     {
       "id": 4,
-      "img": "/data/images/lamakler.png",
+      "img": "/signatures/data/images/lamakler.png",
       "link": "https://lamakler.com",
       "title": "lamakler",
       "isSend": false,
@@ -38,7 +38,7 @@
     },
     {
       "id": 5,
-      "img": "/data/images/rentercorp.png",
+      "img": "/signatures/data/images/rentercorp.png",
       "link": "https://rentercorp.com",
       "title": "rentercorp",
       "isSend": false,
@@ -47,7 +47,7 @@
     },
     {
       "id": 6,
-      "img": "/data/images/lamakler.png",
+      "img": "/signatures/data/images/lamakler.png",
       "link": "https://lamakler.com",
       "title": "lamakler",
       "isSend": false,
@@ -56,7 +56,7 @@
     },
     {
       "id": 7,
-      "img": "/data/images/imperium.png",
+      "img": "/signatures/data/images/imperium.png",
       "link": "https://imperium.com",
       "title": "imperium",
       "isSend": false,
@@ -65,7 +65,7 @@
     },
     {
       "id": 8,
-      "img": "/data/images/indestor.png",
+      "img": "/signatures/data/images/indestor.png",
       "link": "https://indestor.com",
       "title": "indestor",
       "isSend": false,
@@ -74,7 +74,7 @@
     },
     {
       "id": 9,
-      "img": "/data/images/welltor.png",
+      "img": "/signatures/data/images/welltor.png",
       "link": "https://welltor.com",
       "title": "welltor",
       "isSend": false,
