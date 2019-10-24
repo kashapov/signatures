@@ -37,7 +37,7 @@
     rgba(2, 67, 113, 0.8) 100%
   );
   color: white;
-  padding: 10px;
+  padding: 15px;
 }
 
 .info {
@@ -60,6 +60,20 @@
   padding: 0 0 20px 20px;
 }
 
+.checkboxBtn {
+  border: 0;
+  padding: 0;
+  color: white;
+  background: transparent;
+  cursor: pointer;
+  font-size: 20px;
+  outline: none;
+}
+
+.checkboxBtn:hover {
+  opacity: 0.5;
+}
+
 .infoDataTitle {
   display: inline-block;
   min-width: 160px;
@@ -68,6 +82,32 @@
 .infoMenu {
   display: flex;
   justify-content: space-between;
+  padding-left: 20px;
+}
+
+.infoMenuBtn {
+  border: 2px solid white;
+  border-radius: 3px;
+  color: white;
+  background: transparent;
+  padding: 7px 30px;
+  cursor: pointer;
+  outline: none;
+}
+
+.infoMenuBtnsBlock {
+  display: flex;
+  justify-content: space-around;
+  min-width: 130px;
+}
+
+.infoMenuBtnIcon {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.infoMenuBtnIcon:hover {
+  opacity: 0.5;
 }
 
 @media (max-width: 1000px) {

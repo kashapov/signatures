@@ -1,5 +1,13 @@
 import React from 'react';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faTrashAlt,
+  faEye,
+  faPencilAlt,
+} from '@fortawesome/free-solid-svg-icons';
+import { faSquare, faCheckSquare } from '@fortawesome/free-regular-svg-icons';
+
 import styles from './Signatures.module.css';
 
 const Signatures = props => {
@@ -17,19 +25,21 @@ const Signatures = props => {
   ) => {
     const checkboxBtn = checkedSignatures.includes(id) ? (
       <button
+        className={styles.checkboxBtn}
         onClick={() => {
           uncheckSignature(id);
         }}
       >
-        Uncheck
+        <FontAwesomeIcon icon={faCheckSquare} />
       </button>
     ) : (
       <button
+        className={styles.checkboxBtn}
         onClick={() => {
           checkSignature(id);
         }}
       >
-        Check
+        <FontAwesomeIcon icon={faSquare} />
       </button>
     );
 
@@ -56,17 +66,23 @@ const Signatures = props => {
             </div>
           </div>
           <div className={styles.infoMenu}>
-            <button>Use</button>
-            <div>
-              <button>edit</button>
-              <button>view</button>
-              <button
+            <button className={styles.infoMenuBtn}>Use</button>
+            <div className={styles.infoMenuBtnsBlock}>
+              <FontAwesomeIcon
+                className={styles.infoMenuBtnIcon}
+                icon={faPencilAlt}
+              />
+              <FontAwesomeIcon
+                className={styles.infoMenuBtnIcon}
+                icon={faEye}
+              />
+              <FontAwesomeIcon
+                className={styles.infoMenuBtnIcon}
                 onClick={() => {
                   deleteSignature(id);
                 }}
-              >
-                delete
-              </button>
+                icon={faTrashAlt}
+              />
             </div>
           </div>
         </div>

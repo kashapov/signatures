@@ -20,16 +20,17 @@
   align-items: center;
 }
 
-.menuBtn {  
+.menuBtn {
   border: 1px solid #33a8ff;
   border-radius: 3px;
   color: #33a8ff;
   background: white;
   padding: 10px 20px;
   cursor: pointer;
+  outline: none;
 }
 
-.menuBtn:hover {  
-  border: 1px solid #005ea7;  
+.menuBtn:hover {
+  border: 1px solid #005ea7;
   color: #005ea7;
 }
