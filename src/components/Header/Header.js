@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import {
   filterSelectedText,
@@ -56,6 +57,11 @@ const Header = props => {
       )}
     </header>
   );
+};
+
+Header.propTypes = {
+  checkedSignatures: PropTypes.array,
+  deleteCheckedSignatures: PropTypes.func.isRequired,
 };
 
 export default Header;

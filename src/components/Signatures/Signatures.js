@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import {
   textSentByAdmin,
@@ -123,6 +124,14 @@ const Signatures = props => {
       )}
     </section>
   );
+};
+
+Signatures.propTypes = {
+  signatures: PropTypes.array.isRequired,
+  checkSignature: PropTypes.func.isRequired,
+  uncheckSignature: PropTypes.func.isRequired,
+  deleteSignature: PropTypes.func.isRequired,
+  checkedSignatures: PropTypes.array,
 };
 
 export default Signatures;
