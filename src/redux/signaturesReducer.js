@@ -7,7 +7,7 @@ const DELETE_CHECKED_SIGNATURES = 'DELETE_CHECKED_SIGNATURES';
 
 let initialState = {
   signatures: [],
-  checkedSignatures: [1, 3],
+  checkedSignatures: [],
   isFetching: true,
 };
 
@@ -21,22 +21,26 @@ const signaturesReducer = (state = initialState, action) => {
     case CHECK_SIGNATURE:
       return {
         ...state,
-        signatures: state.signatures.map(s => {
-          if (s.id === action.signatureId) {
-            return { ...s, isChecked: true };
-          }
-          return s;
-        }),
+        // signatures: state.signatures.map(s => {
+        //   if (s.id === action.signatureId) {
+        //     return { ...s, isChecked: true };
+        //   }
+        //   return s;
+        // }),
+        checkedSignatures: [...state.checkedSignatures, action.signatureId],
       };
     case UNCHECK_SIGNATURE:
       return {
         ...state,
-        signatures: state.signatures.map(s => {
-          if (s.id === action.signatureId) {
-            return { ...s, isChecked: false };
-          }
-          return s;
-        }),
+        // signatures: state.signatures.map(s => {
+        //   if (s.id === action.signatureId) {
+        //     return { ...s, isChecked: false };
+        //   }
+        //   return s;
+        // }),
+        checkedSignatures: state.checkedSignatures.filter(
+          id => id !== action.signatureId,
+        ),
       };
     case TOGGLE_IS_FETCHING:
       return {

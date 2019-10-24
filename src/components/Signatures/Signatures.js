@@ -8,32 +8,34 @@ const Signatures = props => {
     checkSignature,
     uncheckSignature,
     deleteSignature,
+    checkedSignatures,
   } = props;
 
-  const getSignatureItem = ({ id, img, isChecked }) => {
-    return (
-      <div key={id} className={styles.item}>
-        <div className={styles.signature}>
-          <img className={styles.image} src={img} alt="" />
-        </div>
+  const getSignatureItem = ({ id, img }, checkedSignatures) => {
+    const checkboxBtn = checkedSignatures.includes(id) ? (
+      <button
+        onClick={() => {
+          uncheckSignature(id);
+        }}
+      >
+        Uncheck
+      </button>
+    ) : (
+      <button
+        onClick={() => {
+          checkSignature(id);
+        }}
+      >
+        Check
+      </button>
+    );
+
+    const infoBlock =
+      checkedSignatures.length !== 0 ? (
+        <div className={styles.infoChecked}>{checkboxBtn}</div>
+      ) : (
         <div className={styles.info}>
-          {isChecked ? (
-            <button
-              onClick={() => {
-                uncheckSignature(id);
-              }}
-            >
-              Uncheck
-            </button>
-          ) : (
-            <button
-              onClick={() => {
-                checkSignature(id);
-              }}
-            >
-              Check
-            </button>
-          )}
+          {checkboxBtn}
           <button
             onClick={() => {
               deleteSignature(id);
@@ -42,13 +44,23 @@ const Signatures = props => {
             delete
           </button>
         </div>
+      );
+
+    return (
+      <div key={id} className={styles.item}>
+        <div className={styles.signature}>
+          <img className={styles.image} src={img} alt="" />
+        </div>
+        {infoBlock}
       </div>
     );
   };
 
   return (
     <section className={styles.wrapper}>
-      {signatures.map(signature => getSignatureItem(signature))}
+      {signatures.map(signature =>
+        getSignatureItem(signature, checkedSignatures),
+      )}
     </section>
   );
 };

@@ -15,14 +15,21 @@ import Spinner from '../Spinner/Spinner';
 class SignaturesContainer extends React.PureComponent {
   componentDidMount() {
     this.props.toggleIsFetching(true);
-    axios.get('/signatures.json').then(response => {
+    axios.get('/data/signatures.json').then(response => {
       this.props.toggleIsFetching(false);
       this.props.setSignatures(response.data.signatures);
     });
   }
 
   render() {
-    const { signatures, checkSignature, uncheckSignature, isFetching, deleteSignature } = this.props;
+    const {
+      signatures,
+      checkSignature,
+      uncheckSignature,
+      isFetching,
+      deleteSignature,
+      checkedSignatures,
+    } = this.props;
 
     return (
       <>
@@ -32,6 +39,7 @@ class SignaturesContainer extends React.PureComponent {
           checkSignature={checkSignature}
           uncheckSignature={uncheckSignature}
           deleteSignature={deleteSignature}
+          checkedSignatures={checkedSignatures}
         />
       </>
     );
@@ -42,6 +50,7 @@ const mapStateToProps = state => {
   return {
     signatures: state.signaturesPage.signatures,
     isFetching: state.signaturesPage.isFetching,
+    checkedSignatures: state.signaturesPage.checkedSignatures,
   };
 };
 

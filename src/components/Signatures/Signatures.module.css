@@ -19,7 +19,8 @@
   height: auto;
 }
 
-.info {
+.info,
+.infoChecked {
   position: absolute;
   top: 0;
   right: 0;
@@ -27,9 +28,28 @@
   left: 0;
   background-color: rgba(65, 0, 253, 0.33);
   height: 100%;
+}
+
+.info {
   opacity: 0;
 }
 
 .info:hover {
   opacity: 1;
+}
+
+.infoChecked {
+  opacity: 1;
+}
+
+@media (max-width: 1000px) {
+  .wrapper {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    grid-template-columns: auto;
+  }
 }
