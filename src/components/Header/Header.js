@@ -1,7 +1,15 @@
 import React from 'react';
 
+import {
+  filterSelectedText,
+  filterDeleteText,
+  appName,
+  btnCreateSignatureText,
+} from '../../constants';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faTrashAlt, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faSquare } from '@fortawesome/free-regular-svg-icons';
 
 import styles from './Header.module.css';
 
@@ -12,16 +20,38 @@ const Header = props => {
     <header className={styles.header}>
       {checkedSignatures.length !== 0 ? (
         <div className={styles.filter}>
-          Selected({checkedSignatures.length})
-          <button onClick={() => deleteCheckedSignatures()}>
-            <FontAwesomeIcon icon={faTrashAlt} />
-            Delete({checkedSignatures.length})
-          </button>
+          <div className={styles.filterItem}>
+            <FontAwesomeIcon className={styles.filterBtnIcon} icon={faSquare} />
+          </div>
+          <div className={styles.filterItem}>
+            {filterSelectedText} ({checkedSignatures.length}){` `}
+            <FontAwesomeIcon className={styles.filterBtnIcon} icon={faTimes} />
+          </div>
+          <div className={styles.filterItem}>
+            <button
+              className={styles.filterBtn}
+              onClick={() => deleteCheckedSignatures()}
+            >
+              <FontAwesomeIcon
+                className={styles.filterBtnIcon}
+                icon={faTrashAlt}
+              />
+              {` `}
+              {filterDeleteText} ({checkedSignatures.length})
+            </button>
+          </div>
         </div>
       ) : (
         <div className={styles.menu}>
-          <h1 className={styles.menuH1}>Signature List</h1>
-          <button className={styles.menuBtn}>Create a signature</button>
+          <h1 className={styles.menuH1}>{appName}</h1>
+          <a
+            href="https://newoldstamp.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.menuBtn}
+          >
+            {btnCreateSignatureText}
+          </a>
         </div>
       )}
     </header>

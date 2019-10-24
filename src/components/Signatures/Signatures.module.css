@@ -70,10 +70,6 @@
   outline: none;
 }
 
-.checkboxBtn:hover {
-  opacity: 0.5;
-}
-
 .infoDataTitle {
   display: inline-block;
   min-width: 160px;
@@ -93,6 +89,7 @@
   padding: 7px 30px;
   cursor: pointer;
   outline: none;
+  text-decoration: none;
 }
 
 .infoMenuBtnsBlock {
@@ -106,8 +103,10 @@
   cursor: pointer;
 }
 
-.infoMenuBtnIcon:hover {
-  opacity: 0.5;
+.infoMenuBtn:hover,
+.infoMenuBtnIcon:hover,
+.checkboxBtn:hover {
+  opacity: 0.7;
 }
 
 @media (max-width: 1000px) {

@@ -20,6 +20,32 @@
   align-items: center;
 }
 
+.filterItem {
+  padding-right: 30px;
+}
+
+.filterBtnIcon {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.filterBtnIcon:hover {
+  color: #005ea7;
+}
+
+.filterBtn {
+  border: 0;
+  background: transparent;
+  color: #33a8ff;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+}
+
+.filterBtn:hover {
+  color: #005ea7;
+}
+
 .menuBtn {
   border: 1px solid #33a8ff;
   border-radius: 3px;
@@ -28,6 +54,7 @@
   padding: 10px 20px;
   cursor: pointer;
   outline: none;
+  text-decoration: none;
 }
 
 .menuBtn:hover {

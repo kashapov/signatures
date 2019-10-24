@@ -1,5 +1,14 @@
 import React from 'react';
 
+import {
+  textSentByAdmin,
+  textInstalledByUser,
+  textLastEdited,
+  btnUseText,
+  textYes,
+  textNo,
+} from '../../constants';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faTrashAlt,
@@ -53,20 +62,29 @@ const Signatures = props => {
           <div className={styles.infoCheckbox}>{checkboxBtn}</div>
           <div className={styles.infoData}>
             <div>
-              <span className={styles.infoDataTitle}>Sent by admin:</span>
-              <span>{isSend ? 'YES' : 'NO'}</span>
+              <span className={styles.infoDataTitle}>{textSentByAdmin}:</span>
+              <span>{isSend ? textYes : textNo}</span>
             </div>
             <div>
-              <span className={styles.infoDataTitle}>Installed by user:</span>
-              <span>{isInstalled ? 'YES' : 'NO'}</span>
+              <span className={styles.infoDataTitle}>
+                {textInstalledByUser}:
+              </span>
+              <span>{isInstalled ? textYes : textNo}</span>
             </div>
             <div>
-              <span className={styles.infoDataTitle}>Last edited:</span>
+              <span className={styles.infoDataTitle}>{textLastEdited}:</span>
               <span>{lastEdit}</span>
             </div>
           </div>
           <div className={styles.infoMenu}>
-            <button className={styles.infoMenuBtn}>Use</button>
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.infoMenuBtn}
+            >
+              {btnUseText}
+            </a>
             <div className={styles.infoMenuBtnsBlock}>
               <FontAwesomeIcon
                 className={styles.infoMenuBtnIcon}
