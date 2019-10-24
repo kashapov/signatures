@@ -1,0 +1,85 @@
+{
+  "signatures": [
+    {
+      "id": 1,
+      "img": "/data/images/welltor.png",
+      "link": "https://welltor.com",
+      "title": "welltor",
+      "isSend": false,
+      "isInstalled": false,
+      "lastEdit": "03.04.2019 16:43"
+    },
+    {
+      "id": 2,
+      "img": "/data/images/imperium.png",
+      "link": "https://imperium.com",
+      "title": "imperium",
+      "isSend": false,
+      "isInstalled": false,
+      "lastEdit": "03.04.2019 16:43"
+    },
+    {
+      "id": 3,
+      "img": "/data/images/indestor.png",
+      "link": "https://indestor.com",
+      "title": "indestor",
+      "isSend": false,
+      "isInstalled": false,
+      "lastEdit": "03.04.2019 16:43"
+    },
+    {
+      "id": 4,
+      "img": "/data/images/lamakler.png",
+      "link": "https://lamakler.com",
+      "title": "lamakler",
+      "isSend": false,
+      "isInstalled": false,
+      "lastEdit": "03.04.2019 16:43"
+    },
+    {
+      "id": 5,
+      "img": "/data/images/rentercorp.png",
+      "link": "https://rentercorp.com",
+      "title": "rentercorp",
+      "isSend": false,
+      "isInstalled": false,
+      "lastEdit": "03.04.2019 16:43"
+    },
+    {
+      "id": 6,
+      "img": "/data/images/lamakler.png",
+      "link": "https://lamakler.com",
+      "title": "lamakler",
+      "isSend": false,
+      "isInstalled": false,
+      "lastEdit": "03.04.2019 16:43"
+    },
+    {
+      "id": 7,
+      "img": "/data/images/imperium.png",
+      "link": "https://imperium.com",
+      "title": "imperium",
+      "isSend": false,
+      "isInstalled": false,
+      "lastEdit": "03.04.2019 16:43"
+    },
+    {
+      "id": 8,
+      "img": "/data/images/indestor.png",
+      "link": "https://indestor.com",
+      "title": "indestor",
+      "isSend": false,
+      "isInstalled": false,
+      "lastEdit": "03.04.2019 16:43"
+    },
+    {
+      "id": 9,
+      "img": "/data/images/welltor.png",
+      "link": "https://welltor.com",
+      "title": "welltor",
+      "isSend": false,
+      "isInstalled": false,
+      "lastEdit": "03.04.2019 16:43"
+    }
+  ]
+}
